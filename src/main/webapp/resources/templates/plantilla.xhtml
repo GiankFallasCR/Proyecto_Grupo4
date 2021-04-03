@@ -10,46 +10,46 @@
     <h:head>
         <style>    
             body {
-              font-family: "Lato", sans-serif;
+                font-family: "Lato", sans-serif;
             }
 
             .sidenav {
-              height: 100%;
-              width: 0;
-              position: fixed;
-              z-index: 1;
-              top: 0;
-              left: 0;
-              background-color: #dddddd;
-              overflow-x: hidden;
-              transition: 0.5s;
-              padding-top: 60px;
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #dddddd;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
             }
 
             .sidenav a {
-              padding: 8px 8px 8px 32px;
-              text-decoration: none;
-              font-size: 25px;
-              color: #818181;
-              display: block;
-              transition: 0.3s;
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
             }
 
             .sidenav a:hover {
-              color: #f1f1f1;
+                color: #f1f1f1;
             }
 
             .sidenav .closebtn {
-              position: absolute;
-              top: 0;
-              right: 25px;
-              font-size: 36px;
-              margin-left: 50px;
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
             }
 
             @media screen and (max-height: 450px) {
-              .sidenav {padding-top: 15px;}
-              .sidenav a {font-size: 18px;}
+                .sidenav {padding-top: 15px;}
+                .sidenav a {font-size: 18px;}
             }
         </style>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -66,11 +66,16 @@
                     <b:navbarLinks pull="left">
                         <b:image library="images" name="logo_AutoTICO-removebg-preview.png" style="height: 80px;"/>
                     </b:navbarLinks>
-                            <b:dropMenu value='Dashboard'  icon-awesome='gamepad' iconAlign="right">                            
-                                <b:navLink value="04 Donas"  href="#{request.contextPath}/faces/dashboard/grafico04.xhtml"/>
-                                <b:navLink value="09 Animated"  href="#{request.contextPath}/faces/dashboard/grafico09.xhtml"/>
-                                <b:navLink value="10 Interactive"  href="#{request.contextPath}/faces/dashboard/grafico10.xhtml"/>
-                            </b:dropMenu>
+                    <b:navbarLinks>
+                        <b:dropMenu value='Dashboard'  icon-awesome='gamepad' iconAlign="right">                            
+                            <b:navLink value="04 Donas"  href="#{request.contextPath}/faces/dashboard/grafico04.xhtml"/>
+                            <b:navLink value="09 Animated"  href="#{request.contextPath}/faces/dashboard/grafico09.xhtml"/>
+                            <b:navLink value="10 Interactive"  href="#{request.contextPath}/faces/dashboard/grafico10.xhtml"/>
+                        </b:dropMenu>
+                        <b:dropMenu value='Vehiculo'  icon-awesome='car' iconAlign="right">
+                            <b:navLink value="Agregar Vehiculo" href="#{request.contextPath}/faces/vehiculo/agregaVehiculo.xhtml"/>
+                        </b:dropMenu>
+                    </b:navbarLinks>
                     <b:navbarLinks pull="right" style-class="hidden-xs">
                         <b:dropMenu value="#{usuarioController.idUsuario}" icon-awesome="fa-user">
                             <b:navLink value="Salir" icon-awesome="fa-sign-out" href="#{request.contextPath}/faces/index.xhtml"/>
@@ -102,11 +107,11 @@
                         </b:dropMenu>
                     </b:navbarLinks>
                 </b:navBar> 
-                
+
                 <div id="mySidenav" class="sidenav">
-                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                  <a href="#{request.contextPath}/faces/principal.xhtml">Inicio</a>
-                  <a href="#{request.contextPath}/faces/cliente/list.xhtml" >
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="#{request.contextPath}/faces/principal.xhtml">Inicio</a>
+                    <a href="#{request.contextPath}/faces/cliente/list.xhtml" >
                         <b:navLink value="Gestion de Clientes" href="#{request.contextPath}/faces/cliente/list.xhtml"/>
                         <br> </br>
                         <b:navLink value="Lista de Empleados"  href="#{request.contextPath}/faces/empleado/listempleado.xhtml"/>
@@ -115,24 +120,24 @@
                         <br> </br>
                         <b:navLink value="Reporte Empleados"  href="#{request.contextPath}/faces/empleado/reporte.xhtml"/>
                         <br> </br>
-                  </a>
-                  <a href="#{request.contextPath}/faces/index.xhtml">Salir</a>
-                  
+                    </a>
+                    <a href="#{request.contextPath}/faces/index.xhtml">Salir</a>
+
                 </div>
-                <span style="font-size:20px;cursor:pointer;color:#045491" onclick="openNav()">&#9776; Menu</span>
+                <span style="font-size:20px;cursor:pointer;color:#ffffff" onclick="openNav()">&#9776; Menu</span>
 
                 <script>
                     function openNav() {
-                      document.getElementById("mySidenav").style.width = "250px";
+                        document.getElementById("mySidenav").style.width = "250px";
                     }
 
                     function closeNav() {
-                      document.getElementById("mySidenav").style.width = "0";
+                        document.getElementById("mySidenav").style.width = "0";
                     }
                 </script>
-                
+
             </ui:insert>
-            
+
         </div>
 
         <div id="content" class="center_content">
